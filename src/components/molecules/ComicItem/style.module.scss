@@ -1,0 +1,24 @@
+.wrapper {
+  display: grid;
+  grid-template: auto / 160px 1fr;
+}
+
+.thumbnailWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.thumbnailWrapper::before {
+  content: "";
+  display: block;
+  padding: 56.25% 0 0;
+}
+
+.thumbnail {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

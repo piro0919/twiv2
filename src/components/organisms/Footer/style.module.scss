@@ -1,0 +1,13 @@
+.footer {
+  background: #333;
+  color: #fff;
+  display: grid;
+  font-size: 1.2rem;
+  grid-template: auto / minmax(auto, 1280px);
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.inner {
+  padding: 0 24px;
+}

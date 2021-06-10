@@ -1,0 +1,53 @@
+.header {
+  align-items: center;
+  background: #00acee;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.headerInner {
+  max-width: 1280px;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.heading1 {
+  font-family: "Caveat", cursive;
+  font-size: 8rem;
+  font-weight: 100;
+}
+
+.main {
+  display: grid;
+  grid-template: auto / minmax(auto, 1280px);
+  justify-content: center;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.heading2 {
+  font-size: 3.2rem;
+  padding: 0 0 64px;
+}
+
+.container {
+  margin: 0 0 -48px;
+}
+
+.col {
+  margin: 0 0 48px;
+}
+
+.heading3 {
+  font-size: 2.4rem;
+  padding: 0 0 24px;
+}
+
+.footer {
+  background: #15181c;
+  color: #fff;
+}

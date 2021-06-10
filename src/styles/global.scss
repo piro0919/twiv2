@@ -1,0 +1,17 @@
+@import "styles/constants";
+@import "sass-mq";
+
+html {
+  font: 62.5% arial, sans-serif;
+  line-height: 1.5;
+  overflow: hidden scroll;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+ul,
+ol {
+  list-style: none;
+}

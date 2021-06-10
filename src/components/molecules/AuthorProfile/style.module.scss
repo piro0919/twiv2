@@ -1,0 +1,21 @@
+.iconWrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  width: 64px;
+}
+
+.iconWrapper::before {
+  content: "";
+  display: block;
+  padding: 100% 0 0;
+}
+
+.icon {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
