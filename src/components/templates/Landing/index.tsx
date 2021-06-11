@@ -1,7 +1,8 @@
 import useWindowSize from "@rooks/use-window-size";
-import React, { CSSProperties, FC, useMemo } from "react";
+import React, { CSSProperties, FC, useCallback, useMemo } from "react";
 import styles from "./style.module.scss";
 import { Row, Col, Container } from "react-grid-system";
+import { useRouter } from "next/dist/client/router";
 
 const Landing: FC = () => {
   const { innerHeight } = useWindowSize();
@@ -11,6 +12,10 @@ const Landing: FC = () => {
     }),
     []
   );
+  const router = useRouter();
+  const handleClick = useCallback(() => {
+    router.push("/signin");
+  }, []);
 
   return (
     <div>
@@ -18,7 +23,7 @@ const Landing: FC = () => {
         <div className={styles.headerInner}>
           <h1 className={styles.heading1}>Twiv</h1>
           <p>ツイッターの漫画を手元に</p>
-          <button>ログイン</button>
+          <button onClick={handleClick}>ログイン</button>
         </div>
       </header>
       <main className={styles.main}>
