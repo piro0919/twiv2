@@ -2,7 +2,6 @@ import { NextPage } from "next";
 import React, { useMemo } from "react";
 import firebase from "libs/firebase";
 import "firebase/auth";
-import useAuth from "hooks/useAuth";
 import SignIn, { SignInProps } from "components/templates/SignIn";
 
 const Pages: NextPage = () => {
@@ -19,8 +18,6 @@ const Pages: NextPage = () => {
     }),
     []
   );
-
-  useAuth();
 
   return <SignIn firebaseAuth={firebaseAuth} uiConfig={uiConfig} />;
 };

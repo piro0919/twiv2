@@ -4,8 +4,12 @@ import "ress";
 import Head from "next/head";
 import "../../styles/global.scss";
 import { setConfiguration } from "react-grid-system";
+import UserContext from "contexts/UserContext";
+import useAuth from "./hooks/useAuth";
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
+  const { user } = useAuth();
+
   useEffect(() => {
     setConfiguration({ breakpoints: [375, 740, 980, 1300] });
   }, []);
@@ -18,7 +22,9 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
           rel="stylesheet"
         />
       </Head>
-      <Component {...pageProps} />
+      <UserContext.Provider value={{ user }}>
+        <Component {...pageProps} />
+      </UserContext.Provider>
     </>
   );
 };

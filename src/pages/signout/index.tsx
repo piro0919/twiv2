@@ -1,14 +1,14 @@
 import "firebase/auth";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
-import useAuth from "hooks/useAuth";
+import React, { useContext, useEffect, useState } from "react";
 import firebase from "libs/firebase";
+import UserContext from "contexts/UserContext";
 
 const Signout: NextPage = () => {
   const {
     user: { uid },
-  } = useAuth();
+  } = useContext(UserContext);
   const [isSignedOut, setIsSignedOut] = useState(false);
   const router = useRouter();
 
