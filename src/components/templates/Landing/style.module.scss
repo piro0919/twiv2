@@ -1,3 +1,5 @@
+@import 'styles/mixins';
+
 .header {
   align-items: center;
   background: #00acee;
@@ -7,22 +9,26 @@
 }
 
 .headerInner {
+  @include global-padding;
   max-width: 1280px;
-  padding: 0 24px;
   width: 100%;
 }
 
 .heading1 {
-  font-family: "Caveat", cursive;
+  font-family: 'Caveat', cursive;
   font-size: 8rem;
   font-weight: 100;
 }
 
 .main {
-  display: grid;
-  grid-template: auto / minmax(auto, 1280px);
+  display: flex;
   justify-content: center;
-  padding: 0 24px;
+}
+
+.mainInner {
+  @include global-padding;
+  max-width: 1280px;
+  width: 100%;
 }
 
 .section {
@@ -36,6 +42,8 @@
 
 .container {
   margin: 0 0 -48px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .col {
@@ -45,9 +53,4 @@
 .heading3 {
   font-size: 2.4rem;
   padding: 0 0 24px;
-}
-
-.footer {
-  background: #15181c;
-  color: #fff;
 }

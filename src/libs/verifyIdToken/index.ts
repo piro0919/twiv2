@@ -12,7 +12,7 @@ export type VerifyIdTokenData = {
 
 const verifyIdToken = async (
   ctx: VerifyIdTokenParams
-): Promise<VerifyIdTokenData> => {
+): Promise<{ data: VerifyIdTokenData } | { error: Error }> => {
   let email: string;
   let uid = "";
 
@@ -25,24 +25,24 @@ const verifyIdToken = async (
 
     email = tmpEmail;
     uid = tmpUid;
-  } catch {
-    if (!process.env.NEXT_PUBLIC_FIREBASE_API_KEY) {
-      throw new Error();
+  } catch (error) {
+    if (!process.env.NEXT_PUBLIC_FIREBASE_API_KEY || !refreshToken) {
+      return { error };
     }
 
-    const {
-      data: { id_token: idToken, user_id: userId },
-    } = await axios.post(
-      `https://securetoken.googleapis.com/v1/token?key=${process.env.NEXT_PUBLIC_FIREBASE_API_KEY}`,
-      {
-        grant_type: "refresh_token",
-        refresh_token: refreshToken,
-      }
-    );
-
-    uid = userId;
-
     try {
+      const {
+        data: { id_token: idToken, user_id: userId },
+      } = await axios.post(
+        `https://securetoken.googleapis.com/v1/token?key=${process.env.NEXT_PUBLIC_FIREBASE_API_KEY}`,
+        {
+          grant_type: "refresh_token",
+          refresh_token: refreshToken,
+        }
+      );
+
+      uid = userId;
+
       const { email: tmpEmail } = await admin.auth().verifyIdToken(idToken);
 
       email = tmpEmail;
@@ -50,14 +50,16 @@ const verifyIdToken = async (
       nookies.set(ctx, "id_token", idToken, {
         path: "/",
       });
-    } catch {
-      throw new Error();
+    } catch (error) {
+      return { error };
     }
   }
 
   return {
-    email,
-    uid,
+    data: {
+      email,
+      uid,
+    },
   };
 };
 

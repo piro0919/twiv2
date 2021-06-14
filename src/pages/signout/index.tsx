@@ -1,9 +1,9 @@
 import "firebase/auth";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
-import React, { useContext, useEffect, useState } from "react";
-import firebase from "libs/firebase";
+import { useContext, useEffect, useState } from "react";
 import UserContext from "contexts/UserContext";
+import firebase from "libs/firebase";
 
 const Signout: NextPage = () => {
   const {

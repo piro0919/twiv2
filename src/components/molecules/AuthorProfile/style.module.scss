@@ -1,3 +1,10 @@
+.wrapper {
+  background: lighten($color: #00acee, $amount: 50);
+  border: 1px solid #00acee;
+  border-radius: 10px;
+  padding: 24px;
+}
+
 .iconWrapper {
   border-radius: 10px;
   overflow: hidden;
@@ -6,7 +13,7 @@
 }
 
 .iconWrapper::before {
-  content: "";
+  content: '';
   display: block;
   padding: 100% 0 0;
 }

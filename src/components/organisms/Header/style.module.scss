@@ -1,0 +1,38 @@
+@import 'styles/mixins';
+
+.header {
+  background: #00acee;
+  color: #fff;
+  display: grid;
+  grid-template: auto / minmax(auto, 1280px);
+  justify-content: center;
+}
+
+.inner {
+  @include global-padding;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.iconWrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  width: 32px;
+}
+
+.iconWrapper::before {
+  content: '';
+  display: block;
+  padding: 100% 0 0;
+}
+
+.icon {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

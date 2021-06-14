@@ -1,0 +1,11 @@
+@import 'sass-mq';
+@import 'styles/constants';
+
+@mixin global-padding {
+  padding-left: 8px;
+  padding-right: 8px;
+  @include mq($from: tablet) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}

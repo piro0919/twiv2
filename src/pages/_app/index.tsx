@@ -1,11 +1,11 @@
 import { AppProps } from "next/app";
-import React, { FC, useEffect } from "react";
-import "ress";
 import Head from "next/head";
-import "../../styles/global.scss";
+import React, { FC, useEffect } from "react";
 import { setConfiguration } from "react-grid-system";
-import UserContext from "contexts/UserContext";
 import useAuth from "./hooks/useAuth";
+import UserContext from "contexts/UserContext";
+import "ress";
+import "../../styles/global.scss";
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   const { user } = useAuth();

@@ -1,6 +1,6 @@
-import React from "react";
-import dynamic from "next/dynamic";
 import { NextPage } from "next";
+import dynamic from "next/dynamic";
+import React from "react";
 
 const Viewer = dynamic(() => import("components/templates/Viewer"), {
   ssr: false,

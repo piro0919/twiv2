@@ -1,8 +1,8 @@
 import { NextPage } from "next";
 import React, { useMemo } from "react";
+import SignIn, { SignInProps } from "components/templates/SignIn";
 import firebase from "libs/firebase";
 import "firebase/auth";
-import SignIn, { SignInProps } from "components/templates/SignIn";
 
 const Pages: NextPage = () => {
   const firebaseAuth = useMemo<SignInProps["firebaseAuth"]>(

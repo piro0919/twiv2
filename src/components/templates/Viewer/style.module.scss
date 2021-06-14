@@ -1,23 +1,26 @@
+@import 'styles/mixins';
+
 .wrapper {
   display: grid;
   grid-template: auto 1fr auto / 1fr;
 }
 
-.main {
-  display: grid;
-  grid-template: auto / minmax(auto, 1280px);
-  justify-content: center;
+.detailWrapper {
+  color: inherit;
 }
 
-.main {
-  padding: 24px 0;
+.detail {
+  color: inherit;
+}
+
+.containerWrapper {
+  color: inherit;
 }
 
 .container {
   margin-bottom: -24px;
-  padding-left: 24px !important;
-  padding-right: 24px !important;
-  width: 100%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .col {

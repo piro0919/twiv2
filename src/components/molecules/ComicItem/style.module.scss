@@ -1,5 +1,6 @@
 .wrapper {
   display: grid;
+  gap: 16px;
   grid-template: auto / 160px 1fr;
 }
 
@@ -9,7 +10,7 @@
 }
 
 .thumbnailWrapper::before {
-  content: "";
+  content: '';
   display: block;
   padding: 56.25% 0 0;
 }
@@ -21,4 +22,13 @@
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+.title {
+  font-size: 1.6rem;
+}
+
+.author {
+  color: lighten($color: #000, $amount: 50);
+  font-size: 1.4rem;
 }
