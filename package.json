@@ -1,4 +1,9 @@
 {
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "dependencies": {
     "@rooks/use-window-size": "4.11.2",
     "axios": "0.21.1",
@@ -145,8 +150,8 @@
     }
   },
   "lint-staged": {
-    ".scss": "npm run lint:style",
-    ".{ts,tsx}": "npm run lint"
+    "src/**/*.scss": "npm run lint:style",
+    "src/**/*.{ts,tsx}": "npm run lint"
   },
   "name": "twiv2",
   "private": true,
