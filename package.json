@@ -7,7 +7,7 @@
   "dependencies": {
     "@rooks/use-window-size": "4.11.2",
     "axios": "0.21.1",
-    "firebase": "8.6.7",
+    "firebase": "8.10.1",
     "firebase-admin": "9.9.0",
     "firebaseui-ja": "1.0.0",
     "next": "10.2.3",
